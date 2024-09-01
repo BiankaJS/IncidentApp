@@ -2,13 +2,16 @@ version: '3.8'
 
 services:
 
-  # incident-api:
-  #   build: .
-  #   container_name: incident-api
-  #   ports:
-  #     - "3000:3000"
-  #   depends_on:
-  #     - mongo
+  incident-api:
+    build: .
+    container_name: incident-api
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - MONGO_URL=mongodb://root:example@mongo/
+    depends_on:
+      - mongo
 
   mongo:
     image: mongo
