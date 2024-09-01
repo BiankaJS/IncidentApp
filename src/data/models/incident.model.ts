@@ -6,7 +6,7 @@ const incidentSchema = new mongoose.Schema({
     require: true
   },
   description: {
-    type: Number,
+    type: String,
     require: true
   },
   lat: {
