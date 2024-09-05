@@ -17,8 +17,8 @@ jobs:
             - name: Build docker image
               run: docker build -t bjs24/incident-api:${{ github.sha }} .
 
-            - name: Tag lastest
-              run: docker tag bjs24/incident-api:${{ github.sha }} bjs24/incident-api:lastest
+            - name: Tag latest
+              run: docker tag bjs24/incident-api:${{ github.sha }} bjs24/incident-api:latest
 
             - name: Push docker image
               run: | 
