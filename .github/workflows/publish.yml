@@ -23,4 +23,4 @@ jobs:
             - name: Push docker image
               run: | 
                 docker push bjs24/incident-api:${{ github.sha }}
-                docker push bjs24/incident-api:lastest
+                docker push bjs24/incident-api:latest
