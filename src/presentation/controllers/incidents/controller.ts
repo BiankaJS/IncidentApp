@@ -1,5 +1,6 @@
 import { Request, Response } from "express"
 import { IncidentModel } from "../../../data/models/incident.model";
+import { EmailService } from "../../../domain/services/email.service";
 
 export class IncidentController {
   public getIncident = async (req: Request, res: Response) => {
@@ -21,6 +22,13 @@ export class IncidentController {
         lat,
         lng
       })
+
+      // const emailService = new EmailService();
+      // await emailService.sendEmail({
+      //   to: "aknaib.13js@gmail.com",
+      //   subject: `Incident: ${newIncident.title}`,
+      //   htmlBody: `<h1>${newIncident.description}</h1>`
+      // })
 
       res.json(newIncident);
     } catch (error) {
