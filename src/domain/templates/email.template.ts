@@ -2,6 +2,7 @@ import { envs } from "../../config/envs.conections";
 
 export function generateIncidentEmailTemplate(title: string,description:string, lat: number, lng: number): string {
     const mapboxUrl = generateMapboxStaticImageURL(lat, lng);
+    console.log(mapboxUrl);
     return `
     <!DOCTYPE html>
     <html lang="es">
@@ -61,7 +62,7 @@ export function generateIncidentEmailTemplate(title: string,description:string, 
                 <p><strong>Descripcion del Incidente:</strong> ${description}</p>
                 <p><strong>Latitud:</strong> ${lat}</p>
                 <p><strong>Longitud:</strong> ${lng}</p>
-                <image src="${mapboxUrl}"/>
+                <img src="${mapboxUrl}"/>
             </div>
             <div class="footer">
                 <p>Este es un correo generado automáticamente. Por favor, no responda a este mensaje.</p>
